@@ -6,9 +6,19 @@ import eslintPlugin from 'vite-plugin-eslint'
 export default defineConfig({
   plugins: [
     vue(),
-    // 添加下面这块
     eslintPlugin({
-      include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
-    })
-  ]
+      include: [
+        'src/**/*.js',
+        'src/**/*.ts',
+        'src/**/*.js',
+        'src/**/*.vue',
+        '*.js',
+        '*.ts',
+        '*.cjs'
+      ],
+      exclude: ['./node_modules/**'],
+      cache: false,
+    }),
+  ],
+  server: { port: 8080 },
 })

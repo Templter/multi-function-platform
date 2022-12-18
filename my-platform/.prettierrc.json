@@ -1,0 +1,11 @@
+{
+  "parser": "flow",
+  "printWidth": 100,
+  "singleQuote": true,
+  "semi": false,
+  "arrowParens": "always",
+  "jsxBracketSameLine": true,
+  "proseWrap": "preserve",
+  "trailingComma": "none",
+  "endOfLine": "auto"
+}
