@@ -5,7 +5,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({ reactivityTransform: true }),
     eslintPlugin({
       include: [
         'src/**/*.js',
@@ -17,8 +17,8 @@ export default defineConfig({
         '*.cjs'
       ],
       exclude: ['./node_modules/**'],
-      cache: false,
-    }),
+      cache: false
+    })
   ],
-  server: { port: 8080 },
+  server: { port: 8080 }
 })

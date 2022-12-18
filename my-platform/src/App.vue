@@ -1,19 +1,30 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="main_container">
+    <vueLayout v-if="!isLogin"></vueLayout>
+    <transition name="fade-transform" mode="out-in" v-else>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
+    </transition>
   </div>
-  <HelloWorld msg="Vite + Vue" /></div>
 </template>
+
+<script lang="ts">
+import vueLayout from './views/layout/layout.vue'
+export default {
+  data() {
+    return {
+      greeting: 'Hello World!'
+    }
+  },
+  component: [vueLayout],
+  computed: {
+    isLogin() {
+      return true
+    }
+  }
+}
+</script>
 
 <style scoped>
 .logo {

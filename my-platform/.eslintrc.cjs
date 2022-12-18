@@ -25,6 +25,15 @@ module.exports = {
         argsIgnorePattern: '^_'
       }
     ],
+    'vue/multi-word-component-names': [
+      'error',
+      {
+        ignores: ['index'] //需要忽略的组件名
+      }
+    ],
+    'compilerOptions': {
+      "strict": true,
+    },
     'prettier/prettier': [
       1,
       {
@@ -40,7 +49,9 @@ module.exports = {
     ]
   },
   parserOptions: {
-    parser: '@babel/eslint-parser',
+    sourceType: 'module',
+    ecmaVersion: 12,
+    parser: '@typescript-eslint/parser',
     requireConfigFile: false
   }
 }
