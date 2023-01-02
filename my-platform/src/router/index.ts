@@ -2,14 +2,14 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes : [
-    {
-      path: '/',
-      name: 'layout',
-      redirect: 'redirectMicro',
-      component: null,
-      children: []
-    },
+  routes: [
+    // {
+    //   path: '/',
+    //   name: 'layout',
+    //   redirect: 'redirectMicro',
+    //   component: null,
+    //   children: []
+    // },
     {
       path: '/login',
       name: 'login',
@@ -27,11 +27,11 @@ router.beforeEach((to, from, next) => {
     //   })
     //   return
     // }
+    console.log('====================================')
+    console.log(to)
+    console.log('====================================')
     next()
   } else {
-    if (to.path !== '/systemManagement' && sessionStorage.getItem('sysCode')) {
-      sessionStorage.removeItem('sysCode')
-    }
     next()
   }
 })

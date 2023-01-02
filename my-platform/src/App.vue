@@ -1,7 +1,7 @@
 <template>
-  <div id="main_container">
-    <vueLayout v-if="!isLogin"></vueLayout>
-    <transition name="fade-transform" mode="out-in" v-else>
+  <div id="app">
+    <vueLayout></vueLayout>
+    <transition name="fade-transform" mode="out-in">
       <keep-alive>
         <router-view/>
       </keep-alive>
