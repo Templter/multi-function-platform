@@ -1,12 +1,12 @@
 <template>
-    <div>
-      {{ greeting }}
-    </div>
+  <div>
+    {{ greeting }}
+  </div>
 </template>
 
 <script lang="ts">
 export default {
-  name: 'workBench',
+  name: 'WorkBench',
   data() {
     return {
       greeting: 'Hello World!'

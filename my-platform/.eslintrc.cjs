@@ -7,6 +7,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:vue/recommended',
     '@vue/prettier',
     '@vue/typescript/recommended',
     'plugin:vue/vue3-essential'
@@ -47,8 +48,9 @@ module.exports = {
   },
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 12,
     parser: '@typescript-eslint/parser',
+    ecmaVersion: 12,
     requireConfigFile: false
-  }
+  },
+  plugins: ['vue', '@typescript-eslint']
 }

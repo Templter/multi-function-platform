@@ -6,7 +6,7 @@
 
 <script lang="ts">
 export default {
-  name: 'vueLayout',
+  name: 'VueLayout',
   data() {
     return {
       greeting: 'Hello World!'
