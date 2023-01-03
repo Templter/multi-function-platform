@@ -52,5 +52,5 @@ module.exports = {
     ecmaVersion: 12,
     requireConfigFile: false
   },
-  plugins: ['vue', '@typescript-eslint']
+  plugins: ['vue', '@typescript-eslint', 'import']
 }
