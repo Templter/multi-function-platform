@@ -3,6 +3,7 @@ module.exports = {
   env: {
     node: true,
     es2021: true,
+    browser: true,
     'vue/setup-compiler-macros': true
   },
   extends: [
@@ -48,9 +49,7 @@ module.exports = {
   },
   parserOptions: {
     sourceType: 'module',
-    parser: '@typescript-eslint/parser',
-    ecmaVersion: 12,
-    requireConfigFile: false
+    parser: '@typescript-eslint/parser'
   },
-  plugins: ['vue', '@typescript-eslint', 'import']
+  plugins: ['vue', '@typescript-eslint']
 }

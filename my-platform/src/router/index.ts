@@ -3,16 +3,21 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'layout',
-    //   redirect: 'redirectMicro',
-    //   component: null,
-    //   children: []
-    // },
+    {
+      path: '/',
+      name: 'layout',
+      redirect: '/bench',
+      component: null,
+      children: []
+    },
     {
       path: '/login',
       name: 'login',
+      component: () => import('../views/login/index.vue')
+    },
+    {
+      path: '/bench',
+      name: 'WorkBench',
       component: () => import('../views/bench/index.vue')
     }
   ]

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <vueLayout></vueLayout>
     <transition name="fade-transform" mode="out-in">
       <keep-alive>
         <router-view/>
@@ -10,14 +9,12 @@
 </template>
 
 <script lang="ts">
-import vueLayout from './views/layout/layout.vue'
 export default {
   data() {
     return {
       greeting: 'Hello World!'
     }
   },
-  component: [vueLayout],
   computed: {
     isLogin() {
       return true
