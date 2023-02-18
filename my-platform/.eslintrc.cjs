@@ -3,18 +3,18 @@ module.exports = {
   env: {
     node: true,
     es2021: true,
-    browser: true,
-    'vue/setup-compiler-macros': true
+    es6: true,
+    browser: true
   },
   extends: [
-    'eslint:recommended',
-    'plugin:vue/recommended',
     '@vue/prettier',
     '@vue/typescript/recommended',
-    'plugin:vue/vue3-essential'
+    'plugin:vue/vue3-essential',
+    'plugin:vue/base'
   ],
   rules: {
     semi: [0],
+    "@typescript-eslint/no-explicit-any": ["off"],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-console': 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -34,20 +34,19 @@ module.exports = {
       }
     ],
     'prettier/prettier': [
-      1,
+      0,
       {
-        parser: 'flow',
         printWidth: 100,
         singleQuote: true,
         semi: false,
         arrowParens: 'always',
-        jsxBracketSameLine: true,
-        trailingComma: 'none',
-        endOfLine: 'auto'
+        jsxBracketSameLine: true
       }
     ]
   },
+  parser: 'vue-eslint-parser',
   parserOptions: {
+    ecmaVersion: 2020,
     sourceType: 'module',
     parser: '@typescript-eslint/parser'
   },

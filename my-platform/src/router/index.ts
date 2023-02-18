@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'layout',
-      redirect: '/bench',
+      redirect: '/layout',
       component: null,
       children: []
     },

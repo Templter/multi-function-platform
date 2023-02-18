@@ -1,15 +1,20 @@
 <template>
-  <div id="app">
-    <transition name="fade-transform" mode="out-in">
+  <div id="main_container">
+    <layout></layout>
+    <!-- <transition name="fade-transform" mode="out-in">
       <keep-alive>
-        <router-view/>
+        <router-view />
       </keep-alive>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
 <script lang="ts">
+import layout from './views/layout/layout.vue'
 export default {
+  components: {
+    layout
+  },
   data() {
     return {
       greeting: 'Hello World!'
@@ -22,17 +27,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
