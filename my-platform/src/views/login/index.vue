@@ -9,7 +9,7 @@ export default {
   name: 'LoginIn',
   data() {
     return {
-      greeting: 'Hello World!'
+      greeting: '123'
     }
   }
 }

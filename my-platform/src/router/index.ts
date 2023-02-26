@@ -4,41 +4,30 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      path: '/',
-      name: 'layout',
-      redirect: '/layout',
+      path: '/layout',
+      name: '',
       component: null,
-      children: []
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('../views/login/index.vue')
-    },
-    {
-      path: '/bench',
-      name: 'WorkBench',
-      component: () => import('../views/bench/index.vue')
+      children: [
+        {
+          path: '/login',
+          name: 'login',
+          component: () => import('../views/login/index.vue')
+        },
+        {
+          path: '/WorkBench',
+          name: 'WorkBench',
+          component: () => import('../views/bench/index.vue')
+        }
+      ]
     }
   ]
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.path == '/login') {
-    //不允许手动跳转登录页
-    // if (LSH.getItem('userInfo')) {
-    //   next({
-    //     name: 'redirectMicro'
-    //   })
-    //   return
-    // }
-    console.log('====================================')
-    console.log(to)
-    console.log('====================================')
-    next()
-  } else {
-    next()
+  if(to.path == 'login') {
+    console.log(to, from, next)
   }
+  next()
 })
 
 export default router

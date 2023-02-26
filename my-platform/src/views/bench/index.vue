@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ greeting }}
+    Hello World!
   </div>
 </template>
 

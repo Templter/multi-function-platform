@@ -1,29 +1,42 @@
 <template>
-  <a-layout class="layout">
-    <a-layout-header>
-      <div class="logo" />
-      <a-menu theme="dark" mode="horizontal" v-model:selectedKeys="selectedKeys" :style="{ lineHeight: '64px' }">
-        <a-menu-item key="1">nav 1</a-menu-item>
-        <a-menu-item key="2">nav 2</a-menu-item>
-        <a-menu-item key="3">nav 3</a-menu-item>
-      </a-menu>
-    </a-layout-header>
-    
-    <a-layout-footer style="text-align: center">
-      Product By Vicher
-    </a-layout-footer>
-  </a-layout>
+  <div id="main_container">
+    <a-layout class="layout">
+      <a-layout-header>
+        <div class="logo" />
+        <a-menu theme="dark" mode="horizontal" v-model:selectedKeys="selectedKeys" @click="routeTo" :style="{ lineHeight: '64px' }">
+          <a-menu-item key="login">登录</a-menu-item>
+          <a-menu-item key="WorkBench">首页</a-menu-item>
+        </a-menu>
+      </a-layout-header>
+      <router-view></router-view>
+      <a-layout-footer style="text-align: center">
+        Product By Vicher
+      </a-layout-footer>
+    </a-layout>
+  </div>
 </template>
+
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref } from 'vue'
+import { useRouter } from 'vue-router'
 export default defineComponent({
   name: 'layoutAnt',
   setup() {
+    const router = useRouter()
+
+    function routeTo (selectedKeys: any) {
+      router.push({
+        path: '/'+ selectedKeys.key
+      })
+      console.log(selectedKeys)
+    }
+
     return {
-      selectedKeys: ref<string[]>(['2']),
+      selectedKeys: ref<string[]>(['login']),
+      routeTo
     };
   },
-});
+})
 </script>
 <style>
 .site-layout-content {
@@ -48,4 +61,10 @@ export default defineComponent({
 [data-theme='dark'] .site-layout-content {
   background: #141414;
 }
+
+#main_container {
+  width: 100%;
+  height: 100%;
+}
 </style>
+
